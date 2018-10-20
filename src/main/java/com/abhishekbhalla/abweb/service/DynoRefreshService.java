@@ -33,7 +33,7 @@ public class DynoRefreshService implements Runnable {
     private void init() {
         setLastRequestTime();
         httpGet = new HttpGet(URL_TO_CALL);
-        httpGet.addHeader("origin", "http://www.abhishekbhalla.com/ping" );
+        httpGet.addHeader("origin", "www.abhishekbhalla.com/ping" );
         httpGet.addHeader("referer", "self");
         executor = Executors.newSingleThreadScheduledExecutor();
         executor.scheduleAtFixedRate(this, 27, 9, TimeUnit.MINUTES);
