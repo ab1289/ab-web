@@ -24,8 +24,9 @@ public class DynoRefreshService implements Runnable {
 
     private long lastRequestTime;
 
-    private static final String URL_TO_CALL = "www.abhishekbhalla.com/ping";
-    private static final long MAX_WAIT = 1200000;
+    private static final String URL_TO_CALL = "http://www.abhishekbhalla.com/ping";
+//    private static final long MAX_WAIT = 1200000;
+    private static final long MAX_WAIT = 0;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DynoRefreshService.class);
 
@@ -36,7 +37,8 @@ public class DynoRefreshService implements Runnable {
         httpGet.addHeader("origin", "www.abhishekbhalla.com/ping" );
         httpGet.addHeader("referer", "self");
         executor = Executors.newSingleThreadScheduledExecutor();
-        executor.scheduleAtFixedRate(this, 27, 9, TimeUnit.MINUTES);
+//        executor.scheduleAtFixedRate(this, 27, 9, TimeUnit.MINUTES);
+        executor.scheduleAtFixedRate(this, 0, 1, TimeUnit.MINUTES);
     }
 
     @Override
