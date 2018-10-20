@@ -54,7 +54,8 @@ public class DynoRefreshService implements Runnable {
             HttpResponse response = httpClient.execute(httpGet);
             return response.getStatusLine().getStatusCode();
         } catch (IOException e) {
-            LOGGER.info("get exception");
+//            LOGGER.info("get exception");
+            e.printStackTrace();
         }
         return 0;
     }
